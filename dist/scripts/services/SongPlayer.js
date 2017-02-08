@@ -90,6 +90,8 @@
      */
      SongPlayer.currentTime = null;  
 
+     SongPlayer.volume = null;  
+      
     /**
     * @desc Current album variable (public)
     * @type {Object}
@@ -117,6 +119,12 @@
 
     };
 
+    SongPlayer.setVolume = function(volume) {
+      if (currentBuzzObject) {
+        currentBuzzObject.setVolume(volume)
+      }
+    };  
+      
     /**
     * @function SongPlayer.pause (public method of the SongPlayer service)
     * @desc Uses the private setSong and playSong methods to pause currently playing music
